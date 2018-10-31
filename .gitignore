@@ -3,7 +3,7 @@
 .project
 
 # IDEA files #
-.idea/workspace.xml
+.idea
 
 # Compiled source #
 *.com
