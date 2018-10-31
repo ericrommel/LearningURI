@@ -1,4 +1,4 @@
-package _3_strings.page01._1024_encryption;
+package strings._1024_encryption;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,7 +22,7 @@ import java.io.InputStreamReader;
  * Input
  * - The input contains a number of test cases. The first line of each test case contains an
  *   integer N (1 <= N <= 1 * 10^4), indicating the number of lines the problem should encrypt. The
- *   following N lines contains M characters each M (1 <= M <= 1 * 10³).
+ *   following N lines contains M characters each M (1 <= M <= 1 * 10ï¿½).
  *   
  * Output
  * - For each test case, you must present the encrypted message.
@@ -30,45 +30,45 @@ import java.io.InputStreamReader;
  * @author Eric
  *
  */
-public class Main {
+public class MainWithStringBuilder {
 	
 	public static void main(String[] args) throws IOException {
 		int qtdRow = 0;
-		String s = "";
-		Main m = new Main();
 		
+		StringBuilder s = new StringBuilder();
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
 		qtdRow = Integer.parseInt(in.readLine());
 		
 		for (int i = 0; i<qtdRow; i++) {
-			s = in.readLine();
-			s = m.changeAscii(s, false);
+			s.append(in.readLine());
+			s = changeAscii(s, false);
 			//s = m.reverseStr(s);
-			s = new StringBuilder(s).reverse().toString();
-			s = s.substring(0, s.length()/2) + m.changeAscii(s.substring(s.length()/2), true);
-			System.out.println(s);			
+			s.reverse().toString();
+			s.append(new StringBuilder(s.substring(0, s.length()/2)));
+			s.append(changeAscii(new StringBuilder(s.substring(s.length()/2)), true));
+			System.out.println(s.toString());			
 		}		
 		in.close();
 	}
 
-	String changeAscii(String str, boolean half) {
-		String changeStr="";
+	static StringBuilder changeAscii(StringBuilder str, boolean half) {
+		StringBuilder changeStr = new StringBuilder();
 		int codAscii=0;
 		int passe = 3;
 		if (half) {
 			passe = 1;
 			for (int i=0; i<str.length(); i++) {
 					codAscii = (int) str.charAt(i);
-					changeStr += (char) (codAscii-passe);					
+					changeStr.append(codAscii-passe);					
 			}
 		} else {
 			for (int i=0; i<str.length(); i++) {
 				if (Character.isLetter(str.charAt(i))) {
 					codAscii = (int) str.charAt(i);
-					changeStr += (char) (codAscii+passe);					
+					changeStr.append(codAscii+passe);					
 				} else {
-					changeStr += str.charAt(i);
+					changeStr.append(str.charAt(i));
 				}
 			}
 		}

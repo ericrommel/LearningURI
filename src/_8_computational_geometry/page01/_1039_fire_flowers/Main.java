@@ -8,35 +8,35 @@ import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
 /**
- * Nos dias atuais uma flor de fogo não é algo considerado estranho para muitos jovens.  Isso porque
+ * Nos dias atuais uma flor de fogo nï¿½o ï¿½ algo considerado estranho para muitos jovens.  Isso porque
  * um famoso jogo de videogame popularizou esse tipo de flor. Nesse jogo o protagonista ganhava
  * superpoderes ao tocar em uma flor de fogo, passando a atirar pequenas bolas de fogo para derrotar
  * seus inimigos.
  * 
- * No entanto, já se falava sobre flores de fogo há muito tempo atrás. Na mitologia polonesa, flores
- * de fogo são flores místicas de grande poder guardadas por espíritos malignos. Ela possuía esse
- * nome porque brilhava tanto que era impossível olhá-la diretamente. Quem possuísse uma flor dessas
+ * No entanto, jï¿½ se falava sobre flores de fogo hï¿½ muito tempo atrï¿½s. Na mitologia polonesa, flores
+ * de fogo sï¿½o flores mï¿½sticas de grande poder guardadas por espï¿½ritos malignos. Ela possuï¿½a esse
+ * nome porque brilhava tanto que era impossï¿½vel olhï¿½-la diretamente. Quem possuï¿½sse uma flor dessas
  * ganharia a habilidade de ler a mente de outras pessoas, encontrar tesouros escondidos e repelir
  * todos os males.
  * 
- * Para obter uma flor de fogo, a pessoa deveria procurá-la em uma floresta antes da meia-noite na
- * véspera do Noc Kupaly. Exatamente à meia-noite ela floresceria. Para colhê-la seria preciso
- * desenhar um círculo em volta dela. Parece uma tarefa fácil, no entanto, os espíritos malignos que
+ * Para obter uma flor de fogo, a pessoa deveria procurï¿½-la em uma floresta antes da meia-noite na
+ * vï¿½spera do Noc Kupaly. Exatamente ï¿½ meia-noite ela floresceria. Para colhï¿½-la seria preciso
+ * desenhar um cï¿½rculo em volta dela. Parece uma tarefa fï¿½cil, no entanto, os espï¿½ritos malignos que
  * guardam a flor tentariam de tudo para distrair qualquer um tentando colher a flor. Se a pessoa
- * falhasse ao tentar desenhar um círculo em volta da flor, teria sua vida sacrificada.
+ * falhasse ao tentar desenhar um cï¿½rculo em volta da flor, teria sua vida sacrificada.
  * 
- * Dados dois círculo, um desenhado por um ambicioso caçador de flores de fogo e outro representando
- * a área da flor, sua tarefa é determinar se o caçador morre ou fica rico com sua conquista.
+ * Dados dois cï¿½rculo, um desenhado por um ambicioso caï¿½ador de flores de fogo e outro representando
+ * a ï¿½rea da flor, sua tarefa ï¿½ determinar se o caï¿½ador morre ou fica rico com sua conquista.
  * 
  * Entrada
- * - A entrada é composta por diversas instâncias e termina com final de arquivo (EOF). Cada
- *   instância consiste em uma linha com seis inteiros, R1 (1 <= R1) , X1(|X1|), Y1(|Y1|),
- *   R2 (R2 <= 1000), X2(|X2|), Y2 (Y2 <= 1000). O círculo desenhado pelo caçador possui raio R1 e
- *   centro (X1; Y1). O círculo representando a área da flor possui raio R2 e centro (X2; Y2).
+ * - A entrada ï¿½ composta por diversas instï¿½ncias e termina com final de arquivo (EOF). Cada
+ *   instï¿½ncia consiste em uma linha com seis inteiros, R1 (1 <= R1) , X1(|X1|), Y1(|Y1|),
+ *   R2 (R2 <= 1000), X2(|X2|), Y2 (Y2 <= 1000). O cï¿½rculo desenhado pelo caï¿½ador possui raio R1 e
+ *   centro (X1; Y1). O cï¿½rculo representando a ï¿½rea da flor possui raio R2 e centro (X2; Y2).
  * 
- * Saída
- * - Para cada instância imprima uma única linha contendo MORTO, se o caçador morre, ou RICO se o
- *   caçador consegue colher a flor.
+ * Saï¿½da
+ * - Para cada instï¿½ncia imprima uma ï¿½nica linha contendo MORTO, se o caï¿½ador morre, ou RICO se o
+ *   caï¿½ador consegue colher a flor.
  *   
  * @author Eric
  *
@@ -44,14 +44,14 @@ import java.util.StringTokenizer;
 public class Main {
 
 	/**
-	 * Para resolver esta questão, calcula-se a distância entre os dois pontos (do caçador e da
-	 * flor), depois verifica as posições relativas entre as circuferências e a distâncias entre
-	 * seus pontos. Pelo enunciado, a circunferência da flor precisa estar totalmente dentro da
-	 * circunferência do caçador. Ver a figura para visualização do problema.  
-	 * Em matemática, distância euclidiana (ou distância métrica) é a distância entre dois pontos
-	 * que pode ser provada pela aplicação repetida do teorema de Pitágoras. Aplicando essa fórmula
-	 * como distância, o espaço euclidiano torna-se um espaço métrico. A fórmula da distância
-	 * Euclidiana é:
+	 * Para resolver esta questï¿½o, calcula-se a distï¿½ncia entre os dois pontos (do caï¿½ador e da
+	 * flor), depois verifica as posiï¿½ï¿½es relativas entre as circuferï¿½ncias e a distï¿½ncias entre
+	 * seus pontos. Pelo enunciado, a circunferï¿½ncia da flor precisa estar totalmente dentro da
+	 * circunferï¿½ncia do caï¿½ador. Ver a figura para visualizaï¿½ï¿½o do problema.  
+	 * Em matemï¿½tica, distï¿½ncia euclidiana (ou distï¿½ncia mï¿½trica) ï¿½ a distï¿½ncia entre dois pontos
+	 * que pode ser provada pela aplicaï¿½ï¿½o repetida do teorema de Pitï¿½goras. Aplicando essa fï¿½rmula
+	 * como distï¿½ncia, o espaï¿½o euclidiano torna-se um espaï¿½o mï¿½trico. A fï¿½rmula da distï¿½ncia
+	 * Euclidiana ï¿½:
 	 *                    Distancia =  SQRT((Px - Qx)^2 + (Py - Qy)^2) 
 	 */
 	public static void main(String[] args) throws IOException {
@@ -62,23 +62,23 @@ public class Main {
 		while ((str=in.readLine()) != null) {
 			StringTokenizer st = new StringTokenizer(str);
 			while (st.hasMoreTokens()) {
-				r1 = Integer.parseInt(st.nextToken()); // Raio do caçador
-				x1 = Integer.parseInt(st.nextToken()); // Centro do círculo do caçador
-				y1 = Integer.parseInt(st.nextToken()); // Centro do círculo do caçador
+				r1 = Integer.parseInt(st.nextToken()); // Raio do cacador
+				x1 = Integer.parseInt(st.nextToken()); // Centro do circulo do cacador
+				y1 = Integer.parseInt(st.nextToken()); // Centro do circulo do cacador
 				r2 = Integer.parseInt(st.nextToken()); // Raio da flor
-				x2 = Integer.parseInt(st.nextToken()); // Centro do círculo da flor
-				y2 = Integer.parseInt(st.nextToken()); // Centro do círculo da flor
+				x2 = Integer.parseInt(st.nextToken()); // Centro do circulo da flor
+				y2 = Integer.parseInt(st.nextToken()); // Centro do circulo da flor
 				X = (int) Math.pow((x1 - x2),2);
 				Y = (int) Math.pow((y1 - y2),2);
 				dist =  (int) Math.sqrt(X + Y);
 				
 				// Posicoes relativas das circunferencias
 				// Externas: D > r1 + r2
-				// Internas: D < r1 – r2
-				// Tangentes internas: D = r1 – r2
+				// Internas: D < r1 ï¿½ r2
+				// Tangentes internas: D = r1 ï¿½ r2
 				// Tangentes externas: D = r1 + r2
-				// Secantes: r1 – r2 < D < r1 + r2
-				// Concêntricas: D = 0
+				// Secantes: r1 ï¿½ r2 < D < r1 + r2
+				// Concï¿½ntricas: D = 0
 				
 				if ((dist == 0 && (r1 > r2)) || ((dist != 0) && (Y==0 && r1 > r2)) || dist < (r1 - r2)) {
 					out.println("RICO");

@@ -1,4 +1,4 @@
-package strings.page01._1168_led;
+package strings._1168_led;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package _3_strings.page01._1222_short_story_competition;
+package strings._1222_short_story_competition;
 
 import java.io.BufferedReader;
 import java.io.IOException;

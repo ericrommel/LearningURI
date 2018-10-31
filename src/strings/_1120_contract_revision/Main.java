@@ -1,4 +1,4 @@
-package strings.page01._1120_contract_revision;
+package strings._1120_contract_revision;
 
 import java.io.BufferedReader;
 import java.io.IOException;
