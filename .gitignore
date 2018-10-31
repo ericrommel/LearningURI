@@ -1,3 +1,10 @@
+# Eclipse files #
+.classpath
+.project
+
+# IDEA files #
+.idea/workspace.xml
+
 # Compiled source #
 *.com
 *.class
