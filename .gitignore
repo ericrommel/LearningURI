@@ -1,5 +1,5 @@
 # Folders #
-bin\
+/[Bb]in/
 
 # Eclipse files #
 .classpath

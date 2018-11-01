@@ -1,7 +1,13 @@
 package strings._2722_evergreen_trick;
 
 import java.io.BufferedReader;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
 
 /**
  * URI Online Judge | 2722
@@ -40,8 +46,37 @@ import java.io.InputStreamReader;
  * cir lio
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        //String myPackage = strings._2722_evergreen_trick.Main.class.getPackage().getName().replace(".", "/");
+        //FileInputStream stream = new FileInputStream("src/" + myPackage + "/inputUri2722.txt");
+        //BufferedReader in = new BufferedReader(new InputStreamReader(stream));
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(System.out));
 
+        int N = Integer.parseInt(in.readLine());
+        String childrenName = "";
+
+        for (int i = 0; i<N; i++) {
+            String firstLine = in.readLine();
+            String secondLine = in.readLine();
+            int flength = firstLine.length();
+            int slength = secondLine.length();
+            int cont = 0;
+            String s;
+            for (int j = 0; j < (flength / 2); j++) {
+                String f = firstLine.substring(cont, ((cont%flength)+2));
+                if ((cont%slength)+2 > slength) {
+                    s = secondLine.substring(cont, ((cont%slength)+1));
+                } else {
+                    s = secondLine.substring(cont, ((cont%slength)+2));
+                }
+                childrenName += (f + s);
+                cont+=2;
+            }
+            out.write(childrenName + "\n");
+            childrenName = "";
+        }
+        in.close();
+        out.flush();
     }
 }

@@ -1,4 +1,4 @@
-package adhoc.page01._1125_formula_1;
+package adhoc._1125_formula_1;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
