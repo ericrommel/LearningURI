@@ -1,5 +1,8 @@
 package strings._2722_evergreen_trick;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  * URI Online Judge | 2722
  * Evergreen Trick
@@ -38,6 +41,7 @@ package strings._2722_evergreen_trick;
  */
 public class Main {
     public static void main(String[] args) {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
     }
 }

@@ -1,0 +1,59 @@
+package simulators._1069_diamonds_and_sand;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.Stack;
+
+/**
+ * John is working in a diamond mine, trying to extract the highest number of diamond "<>". He must
+ * exclude all sand particles found "." in this process and after a diamond can be extracted, new
+ * diamonds can be formed. If he has as an input. <... << .. >> ....> .... >>>. three diamonds are
+ * formed. The first is taken from <..> resulting. <... <> ....> .... >>>. The second diamond is
+ * then removed, leaving. <.......> .... >>>. The third diamond is then removed, leaving at the end
+ * ..... >>>. without the possibility of extracting new diamonds.
+ * 
+ * Input
+ * - Read an integer N that is the number of test cases. Then follows N lines each up to 1000
+ *   characters, including "<" ,">" and "."
+ *   
+ * Output
+ * - You must print the amount of diamonds that can be extrated in each test case.
+ * 
+ * @author e.dantas
+ *
+ */
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter out = new BufferedWriter(new OutputStreamWriter(System.out));
+		//PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
+		int tam = Integer.parseInt(in.readLine());
+		for (int i=0; i<tam; i++) {
+			out.write(countDiamonds(in.readLine()) + "\n");
+		}
+		out.flush();
+		in.close();
+	}
+	
+	static int countDiamonds(String s) {
+		int count=0;
+		char ch = 0;
+		Stack<Character> pilha = new Stack<Character>();
+		for (int j=0; j<s.length(); j++) {
+//			if ("<".contains(Character.toString(s.charAt(j)))) {
+			ch = s.charAt(j);
+			if (ch == '<') {
+				pilha.push(ch);			
+			//} else if ( ">".contains(Character.toString(s.charAt(j))) && !pilha.empty() ) {
+			} else if (ch == '>' & !pilha.empty()) {
+				pilha.pop();
+				count++;
+			}
+		}
+		return count++;
+	}
+}

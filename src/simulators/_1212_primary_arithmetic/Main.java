@@ -1,10 +1,10 @@
 package simulators._1212_primary_arithmetic;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 
 /**
  * Children are taught to add multi-digit numbers from right-to-left one digit at a time. Many find
@@ -28,15 +28,17 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		int count=0, carry=0;
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
+		BufferedWriter out = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringBuilder num1 = new StringBuilder();
 		StringBuilder num2 = new StringBuilder();
 		String[] s = null;
 		
 		while ((s=in.readLine().split(" ")) != null) {
+			// Condicao de parada
 			if (s[0].equals("0") && s[1].equals("0")) {
 				break;
 			} else {
+				// Estrategia utilizada: completar com zeros a esquerda o menor numero
 				num1.append(s[0]);
 				num2.append(s[1]);
 				if (s[0].length() > s[1].length()) {
@@ -56,6 +58,11 @@ public class Main {
 						}
 					}
 				}
+				
+				// Soma-se cada um dos algarismos com o valor de carry encontrado da soma anterior.
+				// Na primeira soma, o carry é ZERO. Nas somas seguintes, depende-se se houve carry
+				// ou nao. Se houver, soma-se 1 unidade aquela soma. Para cada operacao de carry
+				// ocorrida, incrementa-se um contador.
 				for (int i=num1.length(); i>0; i--) {
 					if (carry + Character.getNumericValue(num1.charAt(i-1)) + Character.getNumericValue(num2.charAt(i-1)) > 9) {
 						carry = 1;
@@ -64,15 +71,19 @@ public class Main {
 						carry = 0;
 					}
 				}
+				
+				// Apresenta-se a quantidade de carries ocorridos
 				if (count == 0) {
-					out.println("No carry operation.");
+					out.write("No carry operation.\n");
 				} else {
 					if (count == 1) {
-						out.println(count + " carry operation.");
+						out.write(count + " carry operation.\n");
 					} else {
-						out.println(count + " carry operations.");
+						out.write(count + " carry operations.\n");
 					}
 				}
+				
+				// Zera-se as variaveis para próxima linha.
 				carry = 0;
 				count = 0;
 				num1.setLength(0);

@@ -1,8 +1,10 @@
 package simulators._1746_dividing_the_names;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -65,6 +67,8 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		int row=0, col=0;
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter out = new BufferedWriter(new OutputStreamWriter(System.out));
+		
 		String s = "";
 
 		s=in.readLine();
@@ -84,10 +88,10 @@ public class Main {
 		for (int i=0; i<names.size(); i++) {
 			if (i < names.size()/2) {
 				avenues.add(names.get(i));
-				System.out.println("Avenues: " + avenues.get(i));
+				out.write("Avenues: " + avenues.get(i) + "\n");
 			} else {
 				streets.add(names.get(i));
-				System.out.println("Streets: " + streets.get(i-(names.size()/2)));
+				out.write("Streets: " + streets.get(i-(names.size()/2)) + "\n");
 			}
 		}
 

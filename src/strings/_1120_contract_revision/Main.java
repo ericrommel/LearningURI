@@ -3,7 +3,8 @@ package strings._1120_contract_revision;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.math.BigDecimal;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 
 /**
  * For years, all contracts of the Association of Contracts for Modernization (ACM) were typed using
@@ -38,16 +39,31 @@ import java.math.BigDecimal;
 public class Main {
  
     public static void main(String[] args) throws IOException {
+//    	String myPackage = Main.class.getPackage().getName().replace(".", "/");
+//    	FileInputStream stream = new FileInputStream("src/" + myPackage + "/inputUri1120.txt");
+//    	BufferedReader in = new BufferedReader(new InputStreamReader(stream));
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    	PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
         String[] s=null;
+        String value = "";
         while (( s=in.readLine().split(" ")) != null) {
             if (s[0].equals("0") & s[1].equals("0")) {
                 break;
             } else {
-                BigDecimal n = (s[1].replaceAll(s[0], "").equals("") ? new BigDecimal(0) : new BigDecimal(s[1].replaceAll(s[0], "")));
-                System.out.println(n.toString());
+            	for (int i=0; i<s[1].length(); i++) {
+            		if (s[1].charAt(i) != s[0].charAt(0)) {
+            			
+            		}
+            	}
+                String n = (s[1].replaceAll(s[0], "").equals("") ? "0" : (s[1].replaceAll(s[0], "")));
+                if (n.equals("0")) {
+                	out.write("0\n");
+                } else {
+                	out.write(n + "\n");
+                }
             }
         }
         in.close();
+        out.flush();
     }
 }

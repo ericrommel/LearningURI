@@ -1,8 +1,12 @@
 package strings._1168_led;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 
 /**
  * John wants to set up a panel containing different numbers of LEDs. He does not have many leds,
@@ -28,15 +32,21 @@ public class Main {
 		int N=0, leds=0;
 		
 		String s = null;
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		
+		String myPackage = Main.class.getPackage().getName().replace(".", "/");
+		FileInputStream stream = new FileInputStream("src/" + myPackage + "/inputUri1168.txt");
+		BufferedReader in = new BufferedReader(new InputStreamReader(stream));
+		
+//		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
 		
 		while ((s=in.readLine()) != null) {
 			N = Integer.parseInt(s);
 			for (int i=0; i<N; i++) {
 				s = in.readLine();
 				for (int j=0; j<s.length(); j++) {
-					char c = s.charAt(j);
-					switch (c) {
+					//s.charAt(j);
+					switch (s.charAt(j)) {
 					case '1':
 						leds+=2;
 						break;
@@ -61,9 +71,11 @@ public class Main {
 						break;						
 					}
 				}
-				System.out.println(leds + " leds");
+				out.write(leds + " leds\n");
 				leds=0;
 			}
 		}
+		in.close();
+		out.flush();
 	}
 }

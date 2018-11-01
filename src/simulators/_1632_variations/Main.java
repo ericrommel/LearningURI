@@ -1,8 +1,10 @@
 package simulators._1632_variations;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 /**
  * The internet is not as safe as it was in the past. One evidence of it is the increase in the number of hacker
@@ -49,22 +51,26 @@ public class Main {
         StringBuilder str;
  
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(System.out));
          
         row = Integer.parseInt(in.readLine());
          
         for (int j=0; j<row; j++) {
             str = new StringBuilder(in.readLine());
             for (int i=0; i<str.length(); i++) {
-                if (str.charAt(i)=='A' || str.charAt(i)=='a' || str.charAt(i)=='E' || str.charAt(i)=='e'
-                        || str.charAt(i)=='I' || str.charAt(i)=='i' || str.charAt(i)=='O'
-                        || str.charAt(i)=='o' || str.charAt(i)=='S' || str.charAt(i)=='s') {
+//                if (str.charAt(i)=='A' || str.charAt(i)=='a' || str.charAt(i)=='E' || str.charAt(i)=='e'
+//                        || str.charAt(i)=='I' || str.charAt(i)=='i' || str.charAt(i)=='O'
+//                        || str.charAt(i)=='o' || str.charAt(i)=='S' || str.charAt(i)=='s') {
+              if ("aAeEiIoOsS".contains(Character.toString(str.charAt(i)))) {	
                     countSpecial++;
                 } else {
                     count++;
                 }
             }
-            System.out.println( (int)(Math.pow(3, countSpecial) * Math.pow(2, count)));
-            count=countSpecial=0;           
+            out.write( (int)(Math.pow(3, countSpecial) * Math.pow(2, count)) + "\n");
+            count=countSpecial=0;
         }
+        in.close();
+        out.flush();
     }
 }
