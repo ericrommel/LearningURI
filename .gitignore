@@ -1,3 +1,11 @@
+# Untrack files added before
+# git add .
+# git commit .
+# git rm -r --cached .
+# git status
+# git add .
+# git commit .
+
 # Folders #
 /[Bb]in/
 
